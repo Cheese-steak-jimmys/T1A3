@@ -10,6 +10,8 @@ f = Figlet(font='kban', justify="center")
 answer_options = ("Enter (Q, W, A, or S): ")
 prs_any_key = (" >>> PRESS -- ANY -- KEY >>> ")
 enter_name = ('ENTER NAME')
+player_name = ('ENTER NAME TO CONTINUE')
+
 def new_game():
 
     guesses = []
@@ -100,12 +102,14 @@ cprint(colored(f.renderText(enter_name), 'red', attrs=['bold']))
 
 print(epic_sword.center(1))
 
-player_name = input('\n' + 'TYPE NAME TO LOAD: '.center(70))
+cprint(('\n' + player_name.center(70)), 'red', attrs=['bold'])
+player_name = input()
+# player_name = input('\n' + 'TYPE NAME TO LOAD: '.center(70))
 player_name = player_name.upper()
 
 
 
-os.system('matrix 8 8') 
+os.system('cmatrix -s') 
 os.system("clear")
 
 new_game()
