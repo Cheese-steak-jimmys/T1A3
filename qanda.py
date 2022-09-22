@@ -4,10 +4,10 @@ import cowsay
 import os
 import getch
 
-f = Figlet(font='kban')
+f = Figlet(font='kban', justify="center")
 answer_options = ("Enter (Q, W, A, or S): ")
 prs_any_key = (" >>> PRESS -- ANY -- KEY >>> ")
-enter_name = (' ENTER YOUR NAME ')
+enter_name = ('\n ENTER YOUR NAME \n')
 def new_game():
 
     guesses = []
@@ -40,7 +40,7 @@ def check_answer(answer, guess):
         cprint((" CORRECT!".center(70) + '\n\n' + prs_any_key.center(70)), 'green', attrs=['bold'])
         return 1
     else:
-        cprint(("WRONG! Its ".center(70) + answer + "\n\n" + prs_any_key.center(70)), 'red', attrs=['bold'])
+        cprint(("NOT SO! Its ".center(70) + answer + "\n\n" + prs_any_key.center(70)), 'red', attrs=['bold'])
         return 0
 
 def display_score(correct_guesses, guesses):
@@ -59,7 +59,7 @@ def display_score(correct_guesses, guesses):
 
     score = int((correct_guesses/len(questions))*100)
     print("Your Grey Matter Score Today ".center(45) + str(score)+"%\n")
-    cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
+    cprint('\n\n' + (prs_any_key + '\n'), 'red', attrs=["bold", "blink"])
     
 def play_again():
 
@@ -83,8 +83,8 @@ options = [["Q. 12", "W. 22", "A. 9", "S. 16"],
           ["Q. False", "A. True"],
           ["Q. Wasing Powder", "W. Arsenic", "A. Adrenaline", "S. Table Salt"]]
          
-cprint(colored(f.renderText(enter_name.center(90)), 'red', attrs=['bold']))
-player_name = input('Name Of Mortal: '.center(70))
+cprint(colored(f.renderText(enter_name), 'red', attrs=['bold']))
+player_name = input('TYPE NAME TO LOAD: '.center(70))
 player_name = player_name.upper()
 
 os.system('matrix 8') 

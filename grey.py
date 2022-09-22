@@ -13,7 +13,7 @@ title_game = ("GAME")
 # os.system('cls')
 # clock = time.asctime()
 
-
+os.system("clear")
 cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
 
 cprint((title_the.center(70) + '\n\n'), 'cyan', attrs=['bold'])
