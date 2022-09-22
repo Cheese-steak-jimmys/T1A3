@@ -29,6 +29,7 @@ cprint(('\n' + time.asctime().center(72, '|') + '\n\n'), 'green', attrs=["bold",
 
 char = getch.getch()
 os.system("clear")
+os.system('cmatrix')
 
 import qanda
 qanda

@@ -15,7 +15,7 @@ def new_game():
     question_num = 1
     
     for key in questions:
-        cowsay.cow('General Knowledge')
+        cowsay.cow('test your Knowledge')
         cprint(('\n\n' + key.center(70) + '\n'), 'cyan', attrs=['bold'])
         
         print()
@@ -41,7 +41,7 @@ def check_answer(answer, guess):
         cprint((" CORRECT!".center(70) + '\n\n' + prs_any_key.center(70)), 'green', attrs=['bold'])
         return 1
     else:
-        cprint(("WRONG!\n\n >>> PRESS -- ANY -- KEY >>> "), 'red', attrs=['bold'])
+        cprint(("WRONG! Its ".center(70) + answer + "\n\n" + prs_any_key.center(70)), 'red', attrs=['bold'])
         return 0
 
 # -------------------------
@@ -68,7 +68,7 @@ def display_score(correct_guesses, guesses):
 def play_again():
 
     response = getch.getch()
-    response = response.upper()
+    # response = response.upper()
 
     if response == "YES":
         return True
@@ -78,67 +78,23 @@ def play_again():
 
 
 questions = {
- "Who created Python? ": "Q",
+ "how many notes are in western syle music? ": "Q",
  "What year was Python created?: ": "W",
  "Python is tributed to which comedy group?: ": "A",
  "Is the Earth round?: ": "Q"
 }
 
-options = [["Q. Guido van Rossum", "W. Elon Musk", "A. Bill Gates", "S. Mark Zuckerburg"],
+options = [["Q. 12", "W. 22", "A. 9", "S. 16"],
           ["Q. 1989", "W. 1991", "A. 2000", "S. 2016"],
           ["Q. Lonely Island", "W. Smosh", "A. Monty Python", "S. SNL"],
           ["Q. True","W. False", "A. sometimes", "S. What's Earth?"]]
-TorF_questions = {
- "Who created Python? ": "A",
- "What year was Python created?: ": "B",
- "Python is tributed to which comedy group?: ": "C",
- "Is the Earth round?: ": "A"
-}
 
-TorF_options = [["A. Guido van Rossum", "B. Elon Musk", "C. Bill Gates", "D. Mark Zuckerburg"],
-          ["A. 1989", "B. 1991", "C. 2000", "D. 2016"],
-          ["A. Lonely Island", "B. Smosh", "C. Monty Python", "D. SNL"],
-          ["A. True","B. False", "C. sometimes", "D. What's Earth?"]]
-music_questions = {
- "Who created Python? ": "A",
- "What year was Python created?: ": "B",
- "Python is tributed to which comedy group?: ": "C",
- "Is the Earth round?: ": "A"
-}
-
-music_options = [["A. Guido van Rossum", "B. Elon Musk", "C. Bill Gates", "D. Mark Zuckerburg"],
-          ["A. 1989", "B. 1991", "C. 2000", "D. 2016"],
-          ["A. Lonely Island", "B. Smosh", "C. Monty Python", "D. SNL"],
-          ["A. True","B. False", "C. sometimes", "D. What's Earth?"]]
-
-geo_questions = {
- "Who created Python? ": "A",
- "What year was Python created?: ": "B",
- "Python is tributed to which comedy group?: ": "C",
- "Is the Earth round?: ": "A"
-}
-
-geo_options = [["A. Guido van Rossum", "B. Elon Musk", "C. Bill Gates", "D. Mark Zuckerburg"],
-          ["A. 1989", "B. 1991", "C. 2000", "D. 2016"],
-          ["A. Lonely Island", "B. Smosh", "C. Monty Python", "D. SNL"],
-          ["A. True","B. False", "C. sometimes", "D. What's Earth?"]]
-
-lore_questions = {
- "Who created Python? ": "A",
- "What year was Python created?: ": "B",
- "Python is tributed to which comedy group?: ": "C",
- "Is the Earth round?: ": "A"
-}
-
-lore_options = [["A. Guido van Rossum", "B. Elon Musk", "C. Bill Gates", "D. Mark Zuckerburg"],
-          ["A. 1989", "B. 1991", "C. 2000", "D. 2016"],
-          ["A. Lonely Island", "B. Smosh", "C. Monty Python", "D. SNL"],
-          ["A. True","B. False", "C. sometimes", "D. What's Earth?"]]
 
 new_game()
+getch.getch()
 
-while play_again():
-    new_game()
+# while play_again():
+#     new_game()
 
 os.system("clear")
 cowsay.trex('See You Tomorrow!')
