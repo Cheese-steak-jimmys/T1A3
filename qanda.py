@@ -1,10 +1,11 @@
 from termcolor import colored, cprint
 from pyfiglet import Figlet
-from ascii import epic_sword
+from ascii import epic_sword, round_door
 import cowsay
 import time
 import os
 import getch
+
 f = Figlet(font='kban', justify="center")
 answer_options = ("Enter (Q, W, A, or S): ")
 prs_any_key = (" >>> PRESS -- ANY -- KEY >>> ")
@@ -45,7 +46,7 @@ def check_answer(answer, guess):
         return 0
 
 def display_score(correct_guesses, guesses):
-    cprint((' G R E Y -- >>> -- MATTER '.center(70, ':')), 'green', attrs=['bold'])
+    cprint(('\n' + ' G R E Y -- >>> -- MATTER '.center(70, ':')), 'green', attrs=['bold'])
     print('\n')
 
     print("Answers: ".center(35), end="")
@@ -60,6 +61,7 @@ def display_score(correct_guesses, guesses):
 
     score = int((correct_guesses/len(questions))*100)
     print("Your Grey Matter Score Today ".center(55) + str(score)+"%\n")
+    print(round_door.center(1) +'\n')
     cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
     
 def play_again():
@@ -77,7 +79,7 @@ questions = {
  "In LOTR Lore, What Type Of Deity Is Melkor (Morgoth)? ": "S",
  "Earth Is The Only Planet That's Not Named After A Greek God? ": "A",
  "The chemical compound NaCl (sodium Chloride) is? ": "S",
- """What Chess Piece Is This Called? 
+ """What Chess Piece Is This Called?\n 
                                 |\_
                                 /  .\_
                                 |   ___)
@@ -93,16 +95,17 @@ options = [["Q. 12", "W. 22", "A. 9", "S. 16"],
           ["Q. Washing Powder", "W. Arsenic", "A. Adrenaline", "S. Table Salt"],
           ["Q. Bishop", "W. Knight", "A. Pawn", "S. Rook"]]
          
+print('\n')
 cprint(colored(f.renderText(enter_name), 'red', attrs=['bold']))
 
-print(epic_sword.center(20))
+print(epic_sword.center(1))
 
 player_name = input('\n' + 'TYPE NAME TO LOAD: '.center(70))
 player_name = player_name.upper()
 
 
 
-os.system('matrix 8') 
+os.system('matrix 8 8') 
 os.system("clear")
 
 new_game()
