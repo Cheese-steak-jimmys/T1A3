@@ -1,7 +1,8 @@
 # from pyfiglet import Figlet
 import time 
 
-
+WIDTH = 900
+HEIGHT = 900
 # t = (9999, 8, 22, 23, 59, 59, 5, 234, 0)
 # time_str = time.asctime(t)
  

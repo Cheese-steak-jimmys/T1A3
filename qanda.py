@@ -1,13 +1,14 @@
 from termcolor import colored, cprint
 from pyfiglet import Figlet
+from ascii import epic_sword
 import cowsay
+import time
 import os
 import getch
-
 f = Figlet(font='kban', justify="center")
 answer_options = ("Enter (Q, W, A, or S): ")
 prs_any_key = (" >>> PRESS -- ANY -- KEY >>> ")
-enter_name = ('\n ENTER YOUR NAME \n')
+enter_name = ('ENTER NAME')
 def new_game():
 
     guesses = []
@@ -15,7 +16,7 @@ def new_game():
     question_num = 1
     
     for key in questions:
-        cowsay.stegosaurus(player_name + ', Test Your Knowledge, Mortal!')
+        cowsay.stegosaurus(player_name + ', Test Your Knowledge!')
         cprint(('\n\n' + key.center(70) + '\n'), 'cyan', attrs=['bold'])
         
         print()
@@ -58,8 +59,8 @@ def display_score(correct_guesses, guesses):
     print('\n')
 
     score = int((correct_guesses/len(questions))*100)
-    print("Your Grey Matter Score Today ".center(45) + str(score)+"%\n")
-    cprint('\n\n' + (prs_any_key + '\n'), 'red', attrs=["bold", "blink"])
+    print("Your Grey Matter Score Today ".center(55) + str(score)+"%\n")
+    cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
     
 def play_again():
 
@@ -75,17 +76,31 @@ questions = {
  "How Many Notes Are In Western Style Music? ": "Q",
  "In LOTR Lore, What Type Of Deity Is Melkor (Morgoth)? ": "S",
  "Earth Is The Only Planet That's Not Named After A Greek God? ": "A",
- "The chemical compound NaCl (sodium Chloride) is? ": "S"
+ "The chemical compound NaCl (sodium Chloride) is? ": "S",
+ """What Chess Piece Is This Called? 
+                                |\_
+                                /  .\_
+                                |   ___)
+                                |    }
+                                |  =  |
+                                /_____}
+                               [_______] """ : "W"
 }
 
 options = [["Q. 12", "W. 22", "A. 9", "S. 16"],
           ["Q. Mayar", "W. Tyre", "A. Illuvatar", "S. Valar"],
           ["Q. False", "A. True"],
-          ["Q. Wasing Powder", "W. Arsenic", "A. Adrenaline", "S. Table Salt"]]
+          ["Q. Washing Powder", "W. Arsenic", "A. Adrenaline", "S. Table Salt"],
+          ["Q. Bishop", "W. Knight", "A. Pawn", "S. Rook"]]
          
 cprint(colored(f.renderText(enter_name), 'red', attrs=['bold']))
-player_name = input('TYPE NAME TO LOAD: '.center(70))
+
+print(epic_sword.center(20))
+
+player_name = input('\n' + 'TYPE NAME TO LOAD: '.center(70))
 player_name = player_name.upper()
+
+
 
 os.system('matrix 8') 
 os.system("clear")
@@ -98,5 +113,6 @@ char = getch.getch()
 #     new_game()
 
 os.system("clear")
-cowsay.trex('See You Tomorrow, ' + player_name + '!')
+cowsay.trex('Return For New Questions Tomorrow, ' + player_name + '!')
 print('\n')
+cprint(('\n' + time.asctime().center(100, '|') + '\n\n'), 'green', attrs=["bold", "reverse"])
