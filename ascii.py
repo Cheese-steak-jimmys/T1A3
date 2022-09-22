@@ -2,6 +2,7 @@ import cowsay
 import os
 import schedule
 import time
+import getch
 # import PIL
 
 # from PIL import Image
@@ -86,23 +87,21 @@ music_img = """
 """
 
 
-print(ascii)
+# print(ascii)
 
-cowsay.daemon('General Knowledge')
-# cowsay.koala('General Knowledge')
+cowsay.stegosaurus('General Knowledge')
+# # cowsay.koala('General Knowledge')
 
-
+# os.system('cmatrix 9') 
 
 # def matrix():
 #   
+ 
 
-# # start = time.time((5))
-# schedule.(10).seconde.do(matrix)
 
-# stop = time.time(os.system('cmatrix'))
 
 print("""
-        _____
+        _____!
     ,-:` \;',`'-, 
   .'-;_,;  ':-;_,'.
  /;   '/    ,  _`.-:

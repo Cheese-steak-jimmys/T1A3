@@ -28,8 +28,9 @@ cprint((prs_any_key.center(70) + '\n\n'), 'red', attrs=["bold", "blink"])
 cprint(('\n' + time.asctime().center(72, '|') + '\n\n'), 'green', attrs=["bold", "reverse"])
 
 char = getch.getch()
+
 os.system("clear")
-os.system('cmatrix')
+# os.system('cmatrix')
 
 import qanda
 qanda

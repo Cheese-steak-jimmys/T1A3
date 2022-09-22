@@ -4,10 +4,10 @@ import cowsay
 import os
 import getch
 
-# f = Figlet(font='thick')
+f = Figlet(font='kban')
 answer_options = ("Enter (Q, W, A, or S): ")
 prs_any_key = (" >>> PRESS -- ANY -- KEY >>> ")
-
+enter_name = (' ENTER YOUR NAME ')
 def new_game():
 
     guesses = []
@@ -15,13 +15,13 @@ def new_game():
     question_num = 1
     
     for key in questions:
-        cowsay.cow('test your Knowledge')
+        cowsay.stegosaurus(player_name + ', Test Your Knowledge, Mortal!')
         cprint(('\n\n' + key.center(70) + '\n'), 'cyan', attrs=['bold'])
         
         print()
         # cprint((q), 'cyan', attrs=['bold'])
         for i in options[question_num-1]:
-            print(i.center(70) + '\n\n')
+            cprint((i.center(70) + '\n\n'), 'yellow')
         guess = input(answer_options.center(70))
         print('\n')
         guess = guess.upper()
@@ -34,7 +34,6 @@ def new_game():
     
     display_score(correct_guesses, guesses)
 
-# -------------------------
 def check_answer(answer, guess):
 
     if answer == guess:
@@ -44,11 +43,9 @@ def check_answer(answer, guess):
         cprint(("WRONG! Its ".center(70) + answer + "\n\n" + prs_any_key.center(70)), 'red', attrs=['bold'])
         return 0
 
-# -------------------------
 def display_score(correct_guesses, guesses):
-    # print("-------------------------")
-    cprint(('\n\n' + "RESULTS".center(70, '.') + '\n\n'), 'green', attrs=['bold'])
-    # print("-------------------------")
+    cprint((' G R E Y -- >>> -- MATTER '.center(70, ':')), 'green', attrs=['bold'])
+    print('\n')
 
     print("Answers: ".center(35), end="")
     for i in questions:
@@ -61,40 +58,45 @@ def display_score(correct_guesses, guesses):
     print('\n')
 
     score = int((correct_guesses/len(questions))*100)
-    print("Your score today is ".center(45)+str(score)+"%\n")
+    print("Your Grey Matter Score Today ".center(45) + str(score)+"%\n")
     cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
     
-# -------------------------
 def play_again():
 
     response = getch.getch()
-    # response = response.upper()
+    response = response.upper()
 
     if response == "YES":
         return True
     else:
         return False
-# -------------------------
-
 
 questions = {
- "how many notes are in western syle music? ": "Q",
- "What year was Python created?: ": "W",
- "Python is tributed to which comedy group?: ": "A",
- "Is the Earth round?: ": "Q"
+ "How Many Notes Are In Western Style Music? ": "Q",
+ "In LOTR Lore, What Type Of Deity Is Melkor (Morgoth)? ": "S",
+ "Earth Is The Only Planet That's Not Named After A Greek God? ": "A",
+ "The chemical compound NaCl (sodium Chloride) is? ": "S"
 }
 
 options = [["Q. 12", "W. 22", "A. 9", "S. 16"],
-          ["Q. 1989", "W. 1991", "A. 2000", "S. 2016"],
-          ["Q. Lonely Island", "W. Smosh", "A. Monty Python", "S. SNL"],
-          ["Q. True","W. False", "A. sometimes", "S. What's Earth?"]]
+          ["Q. Mayar", "W. Tyre", "A. Illuvatar", "S. Valar"],
+          ["Q. False", "A. True"],
+          ["Q. Wasing Powder", "W. Arsenic", "A. Adrenaline", "S. Table Salt"]]
+         
+cprint(colored(f.renderText(enter_name.center(90)), 'red', attrs=['bold']))
+player_name = input('Name Of Mortal: '.center(70))
+player_name = player_name.upper()
 
+os.system('matrix 8') 
+os.system("clear")
 
 new_game()
-getch.getch()
+
+char = getch.getch()
 
 # while play_again():
 #     new_game()
 
 os.system("clear")
-cowsay.trex('See You Tomorrow!')
+cowsay.trex('See You Tomorrow, ' + player_name + '!')
+print('\n')

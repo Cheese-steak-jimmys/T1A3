@@ -10,12 +10,7 @@ import time
 # else:
 #     print('no')
 
-time_elapse = time.gmtime()
-time_elapse[3] 
 
-if time_elapse[3] > (00):
-    import grey
-    grey
-else:
-    print('no')
+import grey
+grey
 
