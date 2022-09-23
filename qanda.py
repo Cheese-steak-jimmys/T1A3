@@ -1,10 +1,12 @@
 from termcolor import colored, cprint
 from pyfiglet import Figlet
 from ascii import epic_sword, round_door
+# from asyncio.timeouts import timeout
 import cowsay
 import time
 import os
 import getch
+
 
 f = Figlet(font='kban', justify="center")
 answer_options = ("Enter (Q, W, A, or S): ")
@@ -77,9 +79,9 @@ def play_again():
         return False
 
 questions = {
- "How Many Notes Are In Western Style Music? ": "Q",
+ "How Many Notes Are In Western Style Music? ": "A",
  "In LOTR Lore, What Type Of Deity Is Melkor (Morgoth)? ": "S",
- "Earth Is The Only Planet That's Not Named After A Greek God? ": "A",
+ "Earth Is The Only Planet Named After A Greek God? ": "Q",
  "The chemical compound NaCl (sodium Chloride) is? ": "S",
  """What Chess Piece Is This Called?\n 
                                 |\_
@@ -91,7 +93,7 @@ questions = {
                                [_______] """ : "W"
 }
 
-options = [["Q. 12", "W. 22", "A. 9", "S. 16"],
+options = [["Q. 9", "W. 22", "A. 12", "S. 16"],
           ["Q. Mayar", "W. Tyre", "A. Illuvatar", "S. Valar"],
           ["Q. False", "A. True"],
           ["Q. Washing Powder", "W. Arsenic", "A. Adrenaline", "S. Table Salt"],
@@ -109,7 +111,7 @@ player_name = player_name.upper()
 
 
 
-os.system('cmatrix -s') 
+os.system ('matrix -u19 4')
 os.system("clear")
 
 new_game()
