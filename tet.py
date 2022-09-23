@@ -1,10 +1,12 @@
-# import subprocess
-
-import os
+import time
 
 # yourCommand = "timeout 2s "
 # timeoutSeconds = 2
 # subprocess.call('cmatrix timeout 2s', shell=True)
 # subprocess.call('matrix -s timeout 2s', shell=True,)
+now = time.gmtime()
 
-os.system ('matrix -u19 4')
+# while True:
+print (now([0]))
+     
+# print ('poo')

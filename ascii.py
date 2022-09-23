@@ -1,9 +1,8 @@
 import cowsay
 import os
-import schedule
 import time
 import getch
-import unimatrix
+
 
 music_img = ("""
 

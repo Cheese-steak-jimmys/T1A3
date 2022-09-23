@@ -21,8 +21,8 @@ def new_game():
     question_num = 1
     
     for key in questions:
-        cprint (('\n' + 'Qusstion. : ' + str(question_num).center(70) + '/6' + '\n'), 'red', attrs=['bold'])
-        cowsay.kitty(player_name + ', Test Your Knowledge!')
+        cprint (('\n' + 'Qusstion >>> ' + str(question_num).center(70) + '>>> Of 6' + '\n'), 'red', attrs=['bold', 'underline'])
+        cowsay.kitty(player_name + ',\n Test Your Knowledge!')
         cprint(('\n\n' + key.center(70) + '\n'), 'cyan', attrs=['bold'])
         
         print()
@@ -65,10 +65,20 @@ def display_score(correct_guesses, guesses):
     print('\n')
 
     score = int((correct_guesses/len(questions))*100)
-    print("Your Grey Matter Score Today ".center(55) + str(score)+"%\n")
+    cprint(("Your Grey Matter Score Today ".center(55) + str(score)+"%\n"), 'magenta')
     print(round_door.center(1) +'\n')
-    cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
     
+    if score <= 25:
+        cprint(('Great Effort, There Is Room For Improvement!'.center(70)), 'red', attrs=["bold"])
+
+    elif score <=  50:
+        cprint(('Good Game, Keep It Up!'.center(70)), 'yellow', attrs=["bold"])
+
+    else:
+        cprint(('Outstanding, Great Score!'.center(70)), 'cyan', attrs=["bold"])
+        
+    cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
+
 def play_again():
 
     response = getch.getch()
@@ -103,7 +113,7 @@ questions = {
                     ⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                     ⠀⠀⠀⠀⢰⣾⣿⣿⣿⣿⣿⠿⠋⠿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                     ⠀⠀⠀⠀⠀⠙⢿⣿⡿⠟⠁⠀ """ : "W",
- "ASTRONOMY: Earth Is The Only Planet Named After A Greek God? ": "Q",
+ "ASTRONOMY: Earth Is The Only Planet Named After A Roman God? ": "Q",
  "CHEMISTRY: The chemical compound NaCl (sodium Chloride) is? ": "S",
  """GENERAL KNOWLEDGE: What Chess Piece Is This Called?\n 
                                 |\_
@@ -134,7 +144,7 @@ player_name = player_name.upper()
 
 
 
-os.system ('matrix -u19 3.5')
+os.system ('matrix -u21 3')
 os.system("clear")
 
 new_game()
@@ -145,6 +155,8 @@ char = getch.getch()
 #     new_game()
 
 os.system("clear")
-cowsay.trex('Return For New Questions Tomorrow, ' + player_name + '!')
+cowsay.trex('Return For New\n Questions Tomorrow, \n' + player_name + '!')
 print('\n')
 cprint(('\n' + time.asctime().center(100, '|') + '\n\n'), 'green', attrs=["bold", "reverse"])
+
+# while time.gmtime
