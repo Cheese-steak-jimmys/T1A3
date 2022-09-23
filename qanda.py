@@ -87,6 +87,13 @@ def next_play():
     else:
         return(False) 
 
+def count_down():
+    now = time.localtime()
+    count_down_hour = (24 - now[3]) 
+    count_down_minute = (60 - now[4]) 
+    print('Time Until The Next Game >>> ', count_down_hour,':', count_down_minute)
+
+
 
 questions = {
  "MUSIC: How Many Notes Are In Western Style Music? ": "A",
@@ -149,12 +156,16 @@ os.system("clear")
 new_game()
 
 char = getch.getch()
+
 while next_play():
     os.system("clear")
     cowsay.trex('Return For New\n Questions Tomorrow, \n' + player_name + '!')
     print('\n')
+    count_down()
     cprint(('\n' + time.asctime().center(100, '|') + '\n\n'), 'green', attrs=["bold", "reverse"])
     break
+else:
+    print('salad')
 
 # while play_again():
 #     new_game()

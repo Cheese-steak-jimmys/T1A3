@@ -9,7 +9,7 @@ import os
 
 f = Figlet(font='colossal')
 prs_any_key = (" >>> PRESS -- ANY -- KEY >>> ")
-title_the = ("THE")
+title_the = ("DAILY")
 title_game = ("GAME")
 # os.system('cls')
 # clock = time.asctime()
