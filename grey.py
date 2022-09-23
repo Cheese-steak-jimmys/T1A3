@@ -2,6 +2,7 @@ import time
 import getch
 from termcolor import colored, cprint
 from pyfiglet import Figlet
+from ascii import impossible_cube
 import os
 
 # keyboard = controller()
@@ -14,6 +15,8 @@ title_game = ("GAME")
 # clock = time.asctime()
 
 os.system("clear")
+cprint((impossible_cube.center(20) +'\n'), 'yellow')
+
 cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
 
 cprint((title_the.center(70) + '\n\n'), 'cyan', attrs=['bold'])
