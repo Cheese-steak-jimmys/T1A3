@@ -13,6 +13,7 @@ answer_options = ("Enter (Q, W, A, or S): ")
 prs_any_key = (" >>> PRESS -- ANY -- KEY >>> ")
 enter_name = ('ENTER NAME')
 player_name = ('ENTER NAME TO CONTINUE')
+now = time.gmtime()
 
 def new_game():
 
@@ -51,6 +52,7 @@ def check_answer(answer, guess):
         return 0
 
 def display_score(correct_guesses, guesses):
+    os.system ('matrix -u21 3')
     cprint(('\n' + ' G R E Y -- >>> -- MATTER '.center(70, ':')), 'green', attrs=['bold'])
     print('\n')
 
@@ -79,15 +81,12 @@ def display_score(correct_guesses, guesses):
         
     cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
 
-def play_again():
-
-    response = getch.getch()
-    response = response.upper()
-
-    if response == "YES":
-        return True
+def next_play():
+    if (now[3]) <= 23:
+        return(True) 
     else:
-        return False
+        return(False) 
+
 
 questions = {
  "MUSIC: How Many Notes Are In Western Style Music? ": "A",
@@ -144,19 +143,21 @@ player_name = player_name.upper()
 
 
 
-os.system ('matrix -u21 3')
+
 os.system("clear")
 
 new_game()
 
 char = getch.getch()
+while next_play():
+    os.system("clear")
+    cowsay.trex('Return For New\n Questions Tomorrow, \n' + player_name + '!')
+    print('\n')
+    cprint(('\n' + time.asctime().center(100, '|') + '\n\n'), 'green', attrs=["bold", "reverse"])
+    break
 
 # while play_again():
 #     new_game()
 
-os.system("clear")
-cowsay.trex('Return For New\n Questions Tomorrow, \n' + player_name + '!')
-print('\n')
-cprint(('\n' + time.asctime().center(100, '|') + '\n\n'), 'green', attrs=["bold", "reverse"])
 
 # while time.gmtime
