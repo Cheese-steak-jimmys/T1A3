@@ -21,11 +21,11 @@ def new_game():
     question_num = 1
     
     for key in questions:
-        cowsay.stegosaurus(player_name + ', Test Your Knowledge!')
+        cprint (('\n' + 'Qusstion. : ' + str(question_num).center(70) + '/6' + '\n'), 'red', attrs=['bold'])
+        cowsay.kitty(player_name + ', Test Your Knowledge!')
         cprint(('\n\n' + key.center(70) + '\n'), 'cyan', attrs=['bold'])
         
         print()
-        # cprint((q), 'cyan', attrs=['bold'])
         for i in options[question_num-1]:
             cprint((i.center(70) + '\n\n'), 'yellow')
         guess = input(answer_options.center(70))
@@ -34,6 +34,7 @@ def new_game():
         guesses.append(guess)
 
         correct_guesses += check_answer(questions.get(key), guess)
+        guess = guess.upper()
         question_num += 1
         getch.getch()
         os.system("clear")
@@ -79,11 +80,32 @@ def play_again():
         return False
 
 questions = {
- "How Many Notes Are In Western Style Music? ": "A",
- "In LOTR Lore, What Type Of Deity Is Melkor (Morgoth)? ": "S",
- "Earth Is The Only Planet Named After A Greek God? ": "Q",
- "The chemical compound NaCl (sodium Chloride) is? ": "S",
- """What Chess Piece Is This Called?\n 
+ "MUSIC: How Many Notes Are In Western Style Music? ": "A",
+ "LORE: In LOTR Lore, What Type Of Deity Is Melkor (Morgoth)? ": "S",
+ """GEOGRAPHY: Which County Is This?\n   
+                                                    ⢠⡤⡄⣾⣲⣦⣤⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣘⣿⣿⣷⣿⡿⠻⣿⣥⡄⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣤⣶⣿⣿⣿⣿⡏⠀⠀⠀⠏⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠄⢼⣿⣿⣿⠟⠙⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣐⣿⢿⣾⡿⠛⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠁⣴⣿⠏⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⡿⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣾⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⢘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⢰⣾⣿⣿⣿⣿⣿⠿⠋⠿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠙⢿⣿⡿⠟⠁⠀ """ : "W",
+ "ASTRONOMY: Earth Is The Only Planet Named After A Greek God? ": "Q",
+ "CHEMISTRY: The chemical compound NaCl (sodium Chloride) is? ": "S",
+ """GENERAL KNOWLEDGE: What Chess Piece Is This Called?\n 
                                 |\_
                                 /  .\_
                                 |   ___)
@@ -94,9 +116,10 @@ questions = {
 }
 
 options = [["Q. 9", "W. 22", "A. 12", "S. 16"],
-          ["Q. Mayar", "W. Tyre", "A. Illuvatar", "S. Valar"],
+          ["Q. Maiar", "W. Tyre", "A. Istari", "S. Valar"],
+          ["Q. Finland", "W. Norway", "A. Cuba", "S. Japan"],
           ["Q. False", "A. True"],
-          ["Q. Washing Powder", "W. Arsenic", "A. Adrenaline", "S. Table Salt"],
+          ["Q. Washing Powder", "W. Drain Cleaner", "A. Pool Chlorine", "S. Table Salt"],
           ["Q. Bishop", "W. Knight", "A. Pawn", "S. Rook"]]
          
 print('\n')
@@ -111,7 +134,7 @@ player_name = player_name.upper()
 
 
 
-os.system ('matrix -u19 4')
+os.system ('matrix -u19 3.5')
 os.system("clear")
 
 new_game()
