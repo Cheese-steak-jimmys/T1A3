@@ -2,20 +2,23 @@
 # Dark Matter - Daily Brain Teaser Game.  
 [T1A3 Repository](https://github.com/Cheese-steak-jimmys/T1A3)  
 [Trello board-T1A3](https://trello.com/invite/b/IWKUd6KC/02fde642b7e5530dbfdf037807ecee2a/t1a3-terminalapp)  
-[T1A3 Slidedeck Presentation] (https://github.com/  
+[T1A3 Slidedeck Presentation] (https://github.com/)  
 ['Grey Matter' Terminal App Walkthrough]  
 _____________________  
 ## App Development  
-'Grey Matter' is a game developed for users/players to have fun answering a short multiple choice quiz, keeping those brain juices flowing.  
+"Grey Matter" is a game developed for users/players to have fun answering a short multiple choice quiz, keeping those brain juices flowing.  
 The intention is to have the user spend a short moment each day to test their knowledge, learn new facts and see their performance.  
-
+  
+## User Story
+### As a < Gaming Fact Lover >, I want < To Play A Quick Brain Teaser  > so that < I can have Fun While Investing little time and energy >
+The intended user is anyone wanting a short, fun and educational challenge to fill in a small moment of the day. A wide array of question style and topics should find most users grey matter to be sated.
 ## Develop a list of features that will be included in the application. It must include:
 ## - at least THREE features
 ## - describe each feature    
 Some of the key features are:  
 
-* Identify Player 
-Play inputs name, nickname or handle of choice.  
+* Identify Player  
+  Player inputs name, nickname or handle of choice.  
 
 * Busy Bee's time feature  
 Grey matter is designed for quick enjoyment in an ever busy world. The player is made aware of time with a clock provided at the beginning and end of game.
@@ -35,7 +38,7 @@ Grey matter is designed for quick enjoyment in an ever busy world. The player is
 * Performance Review  
   A score page is added for the player to review their playplaythrough against the correct answers.  
 
-* Positive Encouragement Function 
+* Positive Encouragement Function  
   Output is given depending on how well the player scored. Eg. <25% 'room for improvement', >50% 'outstanding'.  
   
 * Players Choice Loop  
@@ -57,4 +60,8 @@ ___________________________________
 ## Score Review   
 ![Enter Name Screen](docs/score-ss.png)  
 ## Final Screen   
-![Enter Name Screen](docs/final-page-ss.png)   
+![Enter Name Screen](docs/final-page-ss.png)  
+
+## references  
+ASCII Art  
+ASCII Art ] (https://www.asciiart.eu/) 
