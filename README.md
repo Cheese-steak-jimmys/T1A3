@@ -45,4 +45,16 @@ Grey matter is designed for quick enjoyment in an ever busy world. The player is
   If the player chooses to exit, A farewell message and a readout is provided of the time remaining until next game(next day).  
     __________________________________  
 ## Trello Implementation Plan 
-![Trello Implementation Plan](./docs/trello-main-ss.png)
+![Trello Implementation Plan](./docs/trello-main-ss.png)  
+___________________________________  
+## App Shots    
+### Main Screen
+![Main Screen](docs/grey-matter-ss.png)   
+## User Input Screen
+![Enter Name Screen](docs/enter-name-ss.png)  
+## Quiz   
+![Enter Name Screen](docs/q1-ss.png)  
+## Score Review   
+![Enter Name Screen](docs/score-ss.png)  
+## Final Screen   
+![Enter Name Screen](docs/final-page-ss.png)   
