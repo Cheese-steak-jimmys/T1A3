@@ -2,7 +2,7 @@
 import time 
 import grey
 
-WIDTH = 900
+WIDTH = 9900
 HEIGHT = 900
 
 grey

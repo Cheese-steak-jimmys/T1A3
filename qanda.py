@@ -23,7 +23,7 @@ def new_game():
     
     for key in questions:
         cprint (('\n' + 'Qusstion >>> ' + str(question_num).center(70) + '>>> Of 6' + '\n'), 'red', attrs=['bold', 'underline'])
-        cowsay.kitty(player_name + ',\n Test Your Knowledge!')
+        cowsay.kitty(player_name + ', Test Your Knowledge!')
         cprint(('\n\n' + key.center(70) + '\n'), 'cyan', attrs=['bold'])
         
         print()
@@ -91,7 +91,7 @@ def count_down():
     now = time.localtime()
     count_down_hour = (24 - now[3]) 
     count_down_minute = (60 - now[4]) 
-    print('Time Until The Next Game >>> ', count_down_hour,':', count_down_minute)
+    print('Time Until New Game Questions >>> ', count_down_hour,'Hrs :', count_down_minute, 'Min')
 
 
 
