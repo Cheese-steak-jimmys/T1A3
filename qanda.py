@@ -1,7 +1,6 @@
 from termcolor import colored, cprint
 from pyfiglet import Figlet
 from ascii import epic_sword, round_door
-# from asyncio.timeouts import timeout
 import cowsay
 import time
 import os
@@ -15,7 +14,7 @@ enter_name = ('ENTER NAME')
 player_name = ('ENTER NAME TO CONTINUE')
 now = time.gmtime()
 
-def new_game():
+def daily_game():
 
     guesses = []
     correct_guesses = 0
@@ -40,7 +39,7 @@ def new_game():
         getch.getch()
         os.system("clear")
     
-    display_score(correct_guesses, guesses)
+    final_score(correct_guesses, guesses)
 
 def check_answer(answer, guess):
 
@@ -51,7 +50,7 @@ def check_answer(answer, guess):
         cprint(("NOT SO! Its ".center(70) + answer + "\n\n" + prs_any_key.center(70)), 'red', attrs=['bold'])
         return 0
 
-def display_score(correct_guesses, guesses):
+def final_score(correct_guesses, guesses):
     os.system ('matrix -u21 3')
     cprint(('\n' + ' G R E Y -- >>> -- MATTER '.center(70, ':')), 'green', attrs=['bold'])
     print('\n')
@@ -67,7 +66,7 @@ def display_score(correct_guesses, guesses):
     print('\n')
 
     score = int((correct_guesses/len(questions))*100)
-    cprint(("Your Grey Matter Score Today ".center(55) + str(score)+"%\n"), 'magenta')
+    cprint(("Your Grey Matter Score Today ".center(55) + str(score)+"%\n"), 'yellow')
     print(round_door.center(1) +'\n')
     
     if score <= 25:
@@ -79,10 +78,22 @@ def display_score(correct_guesses, guesses):
     else:
         cprint(('Outstanding, Great Score!'.center(70)), 'cyan', attrs=["bold"])
         
-    cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
+    # cprint('\n\n' + (prs_any_key.center(70) + '\n'), 'red', attrs=["bold", "blink"])
 
-def next_play():
-    if (now[3]) <= 23:
+def try_again():
+
+    replay = input('\nWOULD YOU LIKE TO REPLAY TODAY\'S GAME AGAIN? (Y or N) '.center(20))
+    replay = replay.upper()
+
+    # if replay == "YES":
+    #     return True
+    # else:
+    #     return False
+    # input()
+    # replay = input
+
+    # replay = input.upper()
+    if replay == 'Y':
         return(True) 
     else:
         return(False) 
@@ -97,7 +108,7 @@ def count_down():
 
 questions = {
  "MUSIC: How Many Notes Are In Western Style Music? ": "A",
- "LORE: In LOTR Lore, What Type Of Deity Is Melkor (Morgoth)? ": "S",
+ "LORE: In The Lord Of The Rings, What Type Of Deity Is Melkor (Morgoth)? ": "S",
  """GEOGRAPHY: Which County Is This?\n   
                                                     ⢠⡤⡄⣾⣲⣦⣤⠀⠀⠀⠀⠀
                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣘⣿⣿⣷⣿⡿⠻⣿⣥⡄⠀⠀⠀⠀
@@ -153,21 +164,22 @@ player_name = player_name.upper()
 
 os.system("clear")
 
-new_game()
+daily_game()
 
-char = getch.getch()
+# char = getch.getch()
 
-while next_play():
+while try_again():
     os.system("clear")
-    cowsay.trex('Return For New\n Questions Tomorrow, \n' + player_name + '!')
-    print('\n')
-    count_down()
-    cprint(('\n' + time.asctime().center(100, '|') + '\n\n'), 'green', attrs=["bold", "reverse"])
-    break
-else:
-    print('salad')
+    daily_game()
+   
+os.system("clear")
+cowsay.trex('Return For New\n Questions Tomorrow, \n' + player_name + '!')
+print('\n')
+count_down()
+cprint(('\n' + time.asctime().center(100, '|') + '\n\n'), 'green', attrs=["bold", "reverse"])
+    
 
-# while play_again():
+    
 #     new_game()
 
 

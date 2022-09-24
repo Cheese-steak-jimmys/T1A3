@@ -1,8 +1,7 @@
-# from pyfiglet import Figlet
-import time 
+
 import grey
 
-WIDTH = 9900
+WIDTH = 9600
 HEIGHT = 900
 
 grey
