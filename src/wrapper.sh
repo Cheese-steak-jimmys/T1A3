@@ -12,5 +12,5 @@ then
         echo "Wrong version of python installed" >&2
     fi 
 else
-    echo "ERRpython not installed" >&2
+    echo "ERR: python3 not installed" >&2
 fi
