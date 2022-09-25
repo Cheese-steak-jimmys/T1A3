@@ -37,4 +37,3 @@ char = getch.getch()
 os.system('clear')
 
 import q_and_a
-q_and_a

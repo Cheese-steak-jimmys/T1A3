@@ -59,14 +59,14 @@ def final_score(correct_user_answer, user_answer):
      'green', attrs = ['bold'])
     print('\n')
 
-    print('Answers: '.center(35), end = '')
+    print('Answers: '.center(35), end='')
     for i in quiz_questions:
-        print(quiz_questions.get(i), end = ' ')
+        print(quiz_questions.get(i), end=' ')
     print('\n')
 
-    print('Choices: '.center(35), end = '')
+    print('Choices: '.center(35), end='')
     for i in user_answer:
-        print(i, end = ' ')
+        print(i, end=' ')
     print('\n')
 
     score = int((correct_user_answer/len(quiz_questions))*100)
