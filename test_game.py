@@ -1,6 +1,6 @@
 
 #Testing Q and A function.
-#expected return if input True      >>> NOT So! Its (answer)
+#expected return if input True      >>> CORRECT!
 #expected return if input False     >>> NOT So! Its (answer)
 
 def test_daily_game():
