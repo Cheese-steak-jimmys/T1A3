@@ -36,5 +36,5 @@ char = getch.getch()
 
 os.system('clear')
 
-import qanda
-qanda
+import q_and_a
+q_and_a

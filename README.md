@@ -1,5 +1,5 @@
 # DylanDavidson_T1A3    
-# Dark Matter - Daily Brain Teaser Game.  
+# Dark Matter - Daily Brain Teaser Game.(beta)  
 [T1A3 Repository](https://github.com/Cheese-steak-jimmys/T1A3)  
 [Trello board-T1A3](https://trello.com/invite/b/IWKUd6KC/02fde642b7e5530dbfdf037807ecee2a/t1a3-terminalapp)  
 [T1A3 Slidedeck Presentation] (https://github.com/)  
@@ -47,6 +47,8 @@ Grey matter is designed for quick enjoyment in an ever busy world. The player is
 * Sayonara and time function  
   If the player chooses to exit, A farewell message and a readout is provided of the time remaining until next game(next day).  
     __________________________________  
+## PEP 8  
+* Virtual Studio's default formatter autopep8 and the popular 'black' module has been used to adhere to this style guide. 
 ## Trello Implementation Plan 
 ![Trello Implementation Plan](./docs/trello-main-ss.png)  
 ___________________________________  
@@ -62,6 +64,5 @@ ___________________________________
 ## Final Screen   
 ![Enter Name Screen](docs/final-page-ss.png)  
 
-## references  
-ASCII Art  
-ASCII Art ] (https://www.asciiart.eu/) 
+## Rzeferences   
+[ASCII Art](https://www.asciiart.eu/) 
