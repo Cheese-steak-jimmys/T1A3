@@ -1,9 +1,9 @@
 # DylanDavidson_T1A3    
 # Dark Matter - Daily Brain Teaser Game.(beta)  
-[T1A3 Repository](https://github.com/Cheese-steak-jimmys/T1A3)  
-[Trello board-T1A3](https://trello.com/invite/b/IWKUd6KC/02fde642b7e5530dbfdf037807ecee2a/t1a3-terminalapp)  
-[T1A3 Slidedeck Presentation] (https://github.com/)  
-['Grey Matter' Terminal App Walkthrough]  
+## [T1A3 Repository](https://github.com/Cheese-steak-jimmys/T1A3)  
+## [Trello board-T1A3](https://trello.com/invite/b/IWKUd6KC/02fde642b7e5530dbfdf037807ecee2a/t1a3-terminalapp)  
+## [T1A3 Slidedeck Presentation](https://youtu.be/DUr0UgX5oec)  
+## ['Grey Matter' Terminal App Walkthrough](https://youtu.be/QNUrHnWFars) 
 _____________________  
 ## App Development  
 "Grey Matter" is a game developed for users/players to have fun answering a short multiple choice quiz, keeping those brain juices flowing.  
@@ -47,8 +47,41 @@ Grey matter is designed for quick enjoyment in an ever busy world. The player is
 * Sayonara and time function  
   If the player chooses to exit, A farewell message and a readout is provided of the time remaining until next game(next day).  
     __________________________________  
-## PEP 8  
-* Virtual Studio's default formatter autopep8 and the popular 'black' module has been used to adhere to this style guide. 
+## Style convention  
+### PEP 8  
+* Virtual Studio's default formatter autopep8 and the popular 'black' module have been used to adhere to this style guide.  
+ ______________________________   
+## Grey Matter - Help Documentation For Executing App  
+## [Requirements.txt](src/requirements.txt) -- For the required modules.  
+Run this code to  verify the required python version.  
+```sh  
+#!/bin/bash
+
+source .venv/bin/activate
+
+if [[ -x "$(command -v python)" ]]
+then
+    pyv="$(python -V 2>&1)"
+    if [[ $pyv == "Python 3"* ]]
+    then
+        python main.py
+    else
+        echo "Wrong version of python installed" >&2
+    fi 
+else
+    echo "ERR: python3 not installed" >&2
+fi
+  ```  
+  Run the app by moving into its working directory and use python3 +the file name (main.py).  
+  ```sh  
+    #Eg.  
+    \src\DylanDavidson_T1A3\python3 main.py
+```
+### Game Instructions   
+* By design, this game is forward flowing and very easy to use.  
+* The user simply has to follow the prompts.  
+* There is a requirement to press enter after the input is given for the question choice, replay choice and name entry.
+__________________________
 ## Trello Implementation Plan 
 ![Trello Implementation Plan](./docs/trello-main-ss.png)  
 ___________________________________  
@@ -64,5 +97,7 @@ ___________________________________
 ## Final Screen   
 ![Enter Name Screen](docs/final-page-ss.png)  
 
-## Rzeferences   
-[ASCII Art](https://www.asciiart.eu/) 
+## References   
+## [ASCII Art Source](https://www.asciiart.eu/)  
+## [App Modules From Pypi](https://pypi.org/search/?q=termcolor)  
+
