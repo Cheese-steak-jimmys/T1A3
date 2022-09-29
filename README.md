@@ -2,8 +2,8 @@
 # Dark Matter - Daily Brain Teaser Game.(beta)  
 ## [T1A3 Repository](https://github.com/Cheese-steak-jimmys/T1A3)  
 ## [Trello board-T1A3](https://trello.com/invite/b/IWKUd6KC/02fde642b7e5530dbfdf037807ecee2a/t1a3-terminalapp)  
-## [T1A3 Slidedeck Presentation](https://youtu.be/DUr0UgX5oec)  
-## ['Grey Matter' Terminal App Walkthrough](https://youtu.be/QNUrHnWFars) 
+## [T1A3 Slidedeck Presentation](https://youtu.be/_EPeFcBUZG4)  
+## ['Grey Matter' Terminal App Walkthrough](https://youtu.be/E7D_ChPnZE0) 
 _____________________  
 ## App Development  
 "Grey Matter" is a game developed for users/players to have fun answering a short multiple choice quiz, keeping those brain juices flowing.  
